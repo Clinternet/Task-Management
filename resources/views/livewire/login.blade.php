@@ -2,49 +2,59 @@
     <style>
             
 
+            body{
+                background-image: url("images/background.jpg");
+                background-repeat: no-repeat;
+                background-size: 100%; 
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
             .login-form{
-                width: 400px !important;
+                width: 500px !important;
                 height: 500px !important;
-                background: rgb(156, 123, 123);
                 border-radius: 20px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                padding: 20px;
-                gap: 15px;
                 margin-top: 170px;
                 margin-left: 140px;
+                border: black 3px solid;
+                
             }
-            
+            #login{
+                text-align: center;
+                font-size: 40px;
+                margin-top: 20px;
+            }
             .login-form input{
-                width: 100%;
+                width: 80%;
                 height: 40px;
+                margin-left: 50px;
+                font-size: 15px;
                 border-radius: 10px;
-                border: 1px solid rgb(189, 17, 189);
+                border: 1px solid rgb(0, 0, 0);
             }
             
             .login-btn{
-                width: 100%;
-                height: 40px;
+                width: 40%;
+                height: 50px;
+                font-size: 20px;
                 border-radius: 10px;
                 background: green;
                 color: white;
                 border: none;
+                margin-left: 150px;
+                
             }
-            
-            .login-form p{
-                font-size: 28px;
-                color: rgb(32, 32, 32);
-                font-weight: bold;
-                font-family:Verdana, Geneva, Tahoma, sans-serif;
+            .login-btn:hover{
+                background-color: gray;
             }
             
             .login-message {
-                font-size: 14px; 
+                font-size: 4px; 
                 font-weight: normal; 
-                text-align: center;
-                margin-top: 10px;
+                display: relative;
+                margin-left: 50px;
             }
             
             .login-message.success {
@@ -55,28 +65,32 @@
                 color: red;
             
             }
+            .antialiased{
+                justify-content: center;
+                margin-left: 500px;
+            }
                 </style>
     
+    
         <form wire:submit.prevent="login" style="width: 100%">
-            <p>Login</p>
+            <p id="login">Login</p>
     
             <div style="width: 100%; height: 80px">
-                <label>Email</label>
-                <input type="text" wire:model="email">
+                
+                <input type="text" wire:model="email" placeholder="Email" >
                 @error('email')
                     <p style="font-size: 14px; color: red;">{{ $message }}</p>
                 @enderror
             </div>
     
             <div style="width: 100%; height: 80px">
-                <label>Password</label>
-                <input type="password" wire:model="password">
+                <input type="password" wire:model="password" placeholder="Password">
                 @error('password')
                     <p style="font-size: 14px; color: red;">{{ $message }}</p>
                 @enderror
             </div>
     
-            <button type="submit" class="login-btn">LogIn</button>
+            <button type="submit" class="login-btn">Login</button>
             <p style="font-size: 14px; color: red;">{{ $loginMessage }}</p>
             <a href="/register">Don't have an account?</a>
         </form>

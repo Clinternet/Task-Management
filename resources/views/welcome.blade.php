@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="images/x-icon" href="/images/app-icon.jpg">
 
-    <title>ShoeShells</title>
+    <title>Task Management App</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -14,13 +14,6 @@
     
 </head>
 <body class="antialiased">
-    <div class="landing-banner">
-        <div class="banner-left">
-            <h1>
-                Welcome to <br>
-                My Online Shopping
-            </h1>
-        </div>
         <div class="banner-right">
             @livewire('login')
         </div>

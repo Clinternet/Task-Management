@@ -27,7 +27,7 @@
             <!-- Logo & Name -->
             <div style="display: flex; align-items: center; gap: 15px; padding: 10px;">
                 <img src="/images/logo2.jpg" alt="Logo" width="50">
-                <h4>ShoeShells</h4>
+                <h4>Task</h4>
             </div>
             <div class="divider"></div>
 
