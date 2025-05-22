@@ -1,0 +1,237 @@
+products.css
+/* Container */
+*{
+    background-color: #ddd;
+}
+.container {
+    overflow: auto;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Product Form */
+.product-form {
+    width: 100%;
+    max-width: 1200px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(1, 1, 1, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0 auto;
+}
+
+/* Input & Select Fields */
+.product-form input,
+.product-form select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: white;
+}
+
+/* Button Group Centering */
+.button-group-center {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Save & Cancel Buttons */
+.product-form .save-btn,
+.product-form .cancel-btn {
+    width: 500px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-align: center;
+    border: 2px solid black;
+}
+
+.product-form .save-btn {
+    background-color: #f8f8f8;
+    color: #000000;
+}
+
+.product-form .save-btn:hover {
+    background-color: #218838;  
+}
+
+.product-form .cancel-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.product-form .cancel-btn:hover {
+    background-color: #c82333;
+}
+
+/* Form Layout */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-field {
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    background: rgb(238, 233, 233);
+    border-radius: 10px;
+    overflow: hidden;
+    table-layout: auto;
+    word-wrap: break-word;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+th {
+    background-color: #d4f19e;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+th:first-child {
+    border-top-left-radius: 10px;
+}
+
+th:last-child {
+    border-top-right-radius: 10px;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    word-break: break-word;
+}
+
+td {
+    max-width: 200px;
+    white-space: normal;
+}
+
+tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+/* Buttons in Table */
+td.button-group {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.edit-btn,
+.delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 80px;
+    height: 35px;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edit-btn {
+    background: #59f07a;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #688a64;
+    transform: scale(1.05);
+}
+
+.delete-btn {
+    background: #FF6B6B;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #D9534F;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    td {
+        max-width: 120px;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        width: 65px;
+        height: 30px;
+        font-size: 11px;
+    }
+
+    .form-field {
+        flex: 1 1 100%;
+    }
+
+    .button-group-center {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-form .save-btn,
+    .product-form .cancel-btn {
+        width: 100%;
+        max-width: 500px;
+    }
+}

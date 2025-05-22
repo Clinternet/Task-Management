@@ -1,0 +1,23 @@
+*{
+    background-color: rgb(45, 130, 241);
+}
+h1{
+    font-size: 70px;;
+}
+#search{
+    font-size: 30px;
+    position: relative;
+    right: 500px;
+}
+#input{
+    position: relative;
+    right: 500px;
+}
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}

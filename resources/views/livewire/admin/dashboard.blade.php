@@ -1,0 +1,5 @@
+<div>
+    <div class="main-container">
+        <h1>Dashboard</h1>
+    </div>
+</div>
