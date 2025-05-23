@@ -1,7 +1,7 @@
 <?php
 
 use App\Livewire\Admin\Dashboard;
-use App\Livewire\Admin\Products;
+use App\Livewire\Products;
 use App\Livewire\Cart; 
 use App\Livewire\Home;
 use App\Livewire\BillingPage;
@@ -32,16 +32,13 @@ Route::get('/register', function () {
 Route::middleware(['auth'])->group(function () {
     Route::middleware(['checkrole:customer'])->group(function () {
         Route::get('/home', Home::class)->name('/home');
-        Route::get('/cart', Cart::class)->name('/cart');
-        Route::get('/billing', BillingPage::class)->name('billing.page');
+        Route::get('/products', Products::class)->name('/products');
 
-        Route::get('/cart/remove/{productId}', [Cart::class, 'removeFromCart'])->name('cart.remove');
-        Route::get('/purchase', \App\Livewire\PurchasePage::class)->name('purchase.page');
     });
 
     Route::middleware(['checkrole:admin'])->group(function () {
         Route::get('/dashboard', Dashboard::class)->name('dashboard'); // Changed to '/dashboard'
-        Route::get('/products', Products::class)->name('products');
+        
     });
 });
 

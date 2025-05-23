@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Admin;
+namespace App\Livewire;
 
 use App\Models\Products as Prod;
 use App\Models\Supplier;
@@ -46,7 +46,7 @@ class Products extends Component
         })
         ->get();
 
-    return view('livewire.admin.products', [
+    return view('livewire.products', [
         'products' => $this->products,
     ]);
 }

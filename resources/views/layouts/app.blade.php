@@ -37,14 +37,11 @@
                     
                 
                     <li><a href="{{ route(name: '/home') }}"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="{{ route(name: '/cart') }}"><i class="fas fa-shopping-cart"></i> Cart</a></li>
-                    <li><a href="{{ route(name: 'purchase.page') }}"><i class="fas fa-shopping-bag"></i> Purchases</a></li>
-                    <li><a href="{{ route(name: 'billing.page') }}"><i class="fas fa-credit-card"></i> Billing</a></li>
-                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li><a href="{{ route(name: '/products') }}"><i class="fas fa-shopping-basket"></i> Products</a></li>
                     <li><a href="{{ route(name: 'logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                 @else
                     <li><a href="{{ route(name: 'dashboard') }}"><i class="fas fa-home"></i> Dashboard</a></li>
-                    <li><a href="{{ route(name: 'products') }}"><i class="fas fa-shopping-basket"></i> Products</a></li>
+                    
                     <li>
                         <form class="logout" method="POST" action="{{ route('logout')}}">
                             @csrf
