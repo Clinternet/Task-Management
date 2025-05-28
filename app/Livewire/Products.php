@@ -84,6 +84,7 @@ class Products extends Component
                 Prod::create([
                     'supplier_id' => $this->supplierID,
                     'name' => $this->name,
+                    'name' => $this->name,
                     'price' => $this->price,
                     'category' => $this->category,
                     'file_path' => $filename,
@@ -111,6 +112,7 @@ class Products extends Component
         $this->product = Prod::where('id', $id)->first();
 
         if($this->product){
+            $this->name = $this->product->name;
             $this->name = $this->product->name;
             $this->price = $this->product->price;
             $this->category = $this->product->category;

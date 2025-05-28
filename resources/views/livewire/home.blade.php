@@ -1,111 +1,85 @@
-
 <div>
-
-    <div class="flex justify-center items-start p-8 gap-6 w-full">
-        <p id="search">Search Product</p>
-    <input class="bg-gray-100 py-2 px rounded-md border border-gray-100" type="text" wire:model.live='search' id="input">
-    </div>
     
     <div class="container">
-    <div class="flex justify-center items-start p-8 gap-6 w-full">
-        @foreach ($products as $product)
         
-        <div class="card">
-            <div class="card-inner">
-                
-                <div class="card-front">
-                    
-            <div class="rounded-lg border border-gray-300 bg-green-100 flex-1 overflow-hidden drop-shadow-lg" id="boxes">
-                <img src="{{ asset('uploads/product-images/' . $product->file_path) }}" alt="Product Image" style="width: 200px">
-                <div id="left">
-                    <div class="list" draggable="true"><p class="text-2xl font-bold">{{ $product->name }}</p>
-                        <div class="list" draggable="true"><p>Price:{{ $product->price }}</p>
-                            <div class="list" draggable="true"><p>Quantity:{{ $product->quantity }}</p>
-                                <div class="list" draggable="true"><p>Brand:{{ $product->category }}</p>
-                </div>
-                    <button
-                        wire:click="addToCart({{ $product->id }})"
-                        class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-5 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-400 transition-all duration-300">
-                        <i class="fa-solid fa-cart-shopping" id="add"></i>
-                       
+        <div id="left"> 
+            TO Do
+            @foreach ($products as $product)
                         
-                    </button>
-
-                    <div id="mid">
-
-                    </div>
-            
-                    <div id="right">
-            
-                    </div>
-
+            <div>
+                
+                <div class="list" draggable="true">
+                    <p class="text-2xl font-bold">{{ $product->name }}</p>
                 </div>
-                    </div>
-                        </div>
+                
+            </div>   
+
+            @endforeach
+        
+        
+            
+            <div id="mid">
+                In Progress
             </div>
-        @endforeach
-    </div>
+            <div id="right">
+                Done
+            </div>
+
+        </div> 
+       
+        
+            
 </div>
 
 
-    <style>
-        #boxes{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            border: 1px solid black;
-            border-radius: 2px;
-            height: 30%;
-            
-        }
-        #input{
-            border: 2px solid black;
-        }
-        .container{
-            border: 2px solid black;
-            width: 500px;
-            height: 700px;
-        }
-        *{
-    background-color: beige;
+
+
+
+<style>
+    
+*{
+    background-color: rgb(129, 129, 129);
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     box-sizing: border-box;
 }
+
 .container{
     width: 100%;
     min-height: 100vh;
-    background: #cac6d8;
+    background: #689977;
     display: flex;
     align-items: center;
-    justify-content: center;
+    border: 3px solid black;
 }
 #left, #right, #mid{
-    width: 300px;
-    min-height: 400px;
-    margin: 20px;
+    position: fixed;
+    width: 400px;
+    height: 600px;
+    margin: 10px;
     border: 2px solid white;
 }
 
+#mid{
+    position: fixed;
+    top: 192px;
+    right: 100px;
+    right: 680px;
+}
+#right{
+    position: fixed;
+    bottom: 151px;
+    right: 170px;
+}
+
 .list{
-    background: #e91e63;
-    height: 60px;
+    height: 50px;
     margin: 30px;
     color: #fff;
-    display: flex;
-    align-items: center;
     cursor: grab;
 }
-.list img{
-    width: 30px;
-    margin-right: 15px;
-    margin-left: 20px;
-}
-        
-    
-        
+             
 
     </style>
 
@@ -145,5 +119,6 @@
     }
 </script>
 </div>
+
 
 
