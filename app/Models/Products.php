@@ -14,8 +14,6 @@ class Products extends Model
         'name',
         'price',
         'category',
-        'file_path',
-        'quantity',
     ];
 
     public function supplier() {

@@ -18,8 +18,6 @@ return new class extends Migration
             $table->string('name');
             $table->double('price')->default(0.00);
             $table->string('category');
-            $table->string('file_path');
-            $table->integer('quantity');
             $table->timestamps();
         });
     }

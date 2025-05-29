@@ -2,13 +2,14 @@
     
     <div class="container">
         
+        
         <div id="left"> 
             TO Do
             @foreach ($products as $product)
                         
             <div>
                 
-                <div class="list" draggable="true">
+                <div class="list" draggable="true" id="borderlist">
                     <p class="text-2xl font-bold">{{ $product->name }}</p>
                 </div>
                 
@@ -43,6 +44,12 @@
     padding: 0;
     font-family: sans-serif;
     box-sizing: border-box;
+}
+
+#borderlist{
+    border: 2px solid black;
+    min-height: 100px;
+    
 }
 
 .container{
