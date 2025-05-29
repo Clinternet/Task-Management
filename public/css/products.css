@@ -13,25 +13,30 @@ products.css
 /* Product Form */
 .product-form {
     width: 100%;
-    max-width: 1200px;
+    min-width: 1000px;
+    height: 900px;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(1, 1, 1, 0.5);
     display: flex;
     flex-direction: column;
     gap: 30px;
-    margin: 0 auto;
 }
+
 
 /* Input & Select Fields */
 .product-form input,
 .product-form select {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     border: 2px solid #000000;
     border-radius: 5px;
     box-sizing: border-box;
-    color: white;
+    color: rgb(0, 0, 0);
+}
+
+#task{
+    height: 300px;
 }
 
 /* Button Group Centering */
