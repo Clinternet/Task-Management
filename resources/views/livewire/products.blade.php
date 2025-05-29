@@ -1,14 +1,14 @@
 <div class="main-container">
     <div class="products">
-        <h3>Tasks</h3>
+        <h2 id="tas">Tasks</h2>
         <div class="product-form p-4 drop-shadow-2xl">
-            <p class="text-black-500 font-bold" style="margin-left: 10px;">{{ $action }} Add Products</p>
+            <p class="text-black-500 font-bold" style="margin-left: 10px;">{{ $action }}</p>
             <hr class="hr">
             <form wire:submit.prevent='saveProduct' class="form">
                 <div class="form-group">
                     <div class="form-row">
                         <div class="form-field">
-                            <label for="">User*</label>
+                            <label for="">User</label>
                             <select wire:model='supplierID'>
                                 <option value="" selected>Select User</option>
                                 @foreach ($suppliers as $supplier)
@@ -31,9 +31,9 @@
                             @enderror
                         </div>
 
-                        <div class="form-field">
-                            <label for="price">Date</label>
-                            <input type="number" step="any" wire:model='price'>
+                        <div class="">
+                            <label for="price" id="date">Date</label>
+                            <input type="number" wire:model='price'>
                             @error('price')
                                 <p style="font-size: 14px; color: red;">{{ $message }}</p>
                             @enderror
@@ -41,11 +41,11 @@
                     </div>
                     
 
-                    <div class="form-row">
-                        <div class="form-field">
+                    <div class="">
+                        <div class="">
                             <label for="">Priority Levels</label>
                             <select wire:model='category'>
-                                <option value="">Priority Levels</option>
+                                <option value="" id="pl">Priority Levels</option>
                                 <option value="Low">Low</option>
                                 <option value="Medium">Medium</option>
                                 <option value="High">High</option>
@@ -81,7 +81,6 @@
                     <tr>
                         <th class="left">Task No.</th>
                         <th>User</th>
-                        <th>Task</th>
                         <th>Date</th>
                         <th>Priorty Levels</th>
                         <th class="right">Action</th>
@@ -94,7 +93,6 @@
                     <tr>
                         <td>{{ $item++ }}</td> <!-- Display Item No. -->
                         <td>{{ $product->supplier_name }}</td>
-                        <td>{{ $product->name }}</td>
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->category }}</td>
                         <td class="button-group">
