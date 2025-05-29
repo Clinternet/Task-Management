@@ -10,16 +10,22 @@ products.css
     padding: 20px;
 }
 
+#tas{
+    font-size: 40px;
+}
+
 /* Product Form */
 .product-form {
     width: 100%;
-    min-width: 1000px;
+    min-width: 800px;
     height: 900px;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(1, 1, 1, 0.5);
     display: flex;
     flex-direction: column;
+    position: relative;
+    right: 380px;
     gap: 30px;
 }
 
@@ -35,8 +41,17 @@ products.css
     color: rgb(0, 0, 0);
 }
 
+.product-view{
+    position: relative;
+    bottom: 600px;
+    left: 800px;
+}
+
 #task{
-    height: 300px;
+    height: 200px;
+}
+#date{
+    width: 300px;
 }
 
 /* Button Group Centering */
@@ -50,7 +65,10 @@ products.css
 /* Save & Cancel Buttons */
 .product-form .save-btn,
 .product-form .cancel-btn {
-    width: 500px;
+    position: relative;
+    top: 20px;
+    left: 170px;
+    width: 400px;
     padding: 10px;
     font-size: 14px;
     font-weight: bold;
@@ -72,6 +90,7 @@ products.css
 }
 
 .product-form .cancel-btn {
+    margin-top: 10px;
     background-color: #dc3545;
     color: white;
 }
@@ -87,17 +106,7 @@ products.css
     gap: 20px;
 }
 
-.form-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
 
-.form-field {
-    flex: 1 1 250px;
-    display: flex;
-    flex-direction: column;
-}
 
 /* Table */
 table {
@@ -105,7 +114,7 @@ table {
     border-collapse: separate;
     border-spacing: 0;
     margin-top: 20px;
-    background: rgb(238, 233, 233);
+    background: rgb(131, 65, 65);
     border-radius: 10px;
     overflow: hidden;
     table-layout: auto;

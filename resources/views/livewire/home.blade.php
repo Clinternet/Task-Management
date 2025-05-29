@@ -11,9 +11,16 @@
                 
                 <div class="list" draggable="true" id="borderlist">
                     <p class="text-2xl font-bold">{{ $product->name }}</p>
+
+                    <div id="date">
+                        <p class="text-2xl font-bold">{{ $product->price }}</p>
+                    </div>
                 </div>
                 
+                
             </div>   
+
+            
 
             @endforeach
         
@@ -49,9 +56,12 @@
 #borderlist{
     border: 2px solid black;
     min-height: 100px;
-    
+    word-wrap: break-word;
 }
 
+#date{
+    border: 2px solid black;
+}
 .container{
     width: 100%;
     min-height: 100vh;
@@ -66,6 +76,7 @@
     height: 600px;
     margin: 10px;
     border: 2px solid white;
+    overflow: auto;
 }
 
 #mid{
