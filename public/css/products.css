@@ -1,7 +1,7 @@
 products.css
 /* Container */
 *{
-    background-color: #ddd;
+    background-color: #7a3535;
 }
 .container {
     overflow: auto;
@@ -11,6 +11,10 @@ products.css
 }
 
 #tas{
+
+    font-size: 50px;
+}
+h2{
     font-size: 40px;
 }
 
@@ -28,7 +32,9 @@ products.css
     right: 380px;
     gap: 30px;
 }
-
+.inputs{
+    background-color: rgb(248, 219, 219);
+}
 
 /* Input & Select Fields */
 .product-form input,
@@ -114,7 +120,7 @@ table {
     border-collapse: separate;
     border-spacing: 0;
     margin-top: 20px;
-    background: rgb(131, 65, 65);
+    background: rgb(179, 76, 76);
     border-radius: 10px;
     overflow: hidden;
     table-layout: auto;

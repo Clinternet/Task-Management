@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Products as Prod;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
@@ -53,5 +54,26 @@ class Home extends Component
         session()->flash('success', $product->name . ' added to cart!');
     }
 
+    public function toggleEditProduct($id){
+        $this->action = 'edit';
+
+        $this->product = Prod::where('id', $id)->first();
+
+        if($this->product){
+            $this->name = $this->product->name;
+            $this->name = $this->product->name;
+            $this->price = $this->product->price;
+            $this->category = $this->product->category;
+        }
+    }
+
+    public function deleteProduct($id) {
+        $this->product = Prod::where('id', $id)->first();
+        if($this->product){
+            $this->product->delete();
+
+            $this->statusMessage = 'Product deleted successfully!.';
+        }
+    }
     
 }

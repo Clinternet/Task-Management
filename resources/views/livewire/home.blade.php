@@ -1,100 +1,194 @@
 <div>
     
     <div class="container">
-        
-        
+        <div class="h" id="h1">
+            To Do
+        </div>
+
+        <div class="h" id="h2">
+            In Progress
+        </div>
+
+        <div class="h" id="h3">
+            Done
+
+        </div>
+
+
         <div id="left"> 
-            TO Do
             @foreach ($products as $product)
                         
             <div>
                 
+
+                <div class="list" draggable="true" id="borderlist" clas>
+                    <p class="text-2xl font-bold" id="borderlist">{{ $product->name }} 
+                        <div id="info">
+                            {{ $product->price }}
+                            {{ $product->category }}
+
+                            <button class="delete-btn" wire:click="deleteProduct({{ $product->id }})">
+                                <i class=""></i> Delete
+                            </button>
+                        </div>
+                        
+                
+                        
+                    </p>
+
+
                 <div class="list" draggable="true" id="borderlist">
                     <p class="text-2xl font-bold">{{ $product->name }}</p>
 
                     <div id="date">
                         <p class="text-2xl font-bold">{{ $product->price }}</p>
                     </div>
+
                 </div>
+
                 
+                
+
+            </div>
+            
+              
+
                 
             </div>   
+
 
             
 
             @endforeach
         
-        
-            
+
             <div id="mid">
-                In Progress
-            </div>
-            <div id="right">
-                Done
+                
             </div>
 
-        </div> 
+            
+            <div id="right">
+                
+            </div>
+
+        
+    </div>
        
         
             
 </div>
 
 
-dasdasafdasadasdafadsasfasfasdafa
-
 
 <style>
     
 *{
-    background-color: rgb(129, 129, 129);
+    background-color:rgb(214, 204, 204);
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     box-sizing: border-box;
 }
+.h{
+    position: relative;
+    bottom: 400px;
+    font-size: 35px;
+    font-family: cursive;
+    border: 2px black solid;
+    padding: 8px;
+    
+}
+#h1{
+    position: relative;
+    left: 180px;
+}
+#h2{
+    position: relative;
+    left: 500px;
+}
+#h3{
+    position: relative;
+    left: 830px;
+}
+.delete-btn{
+    margin-left: 15px;
+}
 
 #borderlist{
-    border: 2px solid black;
     min-height: 100px;
+    width: 332px;
     word-wrap: break-word;
+    background-color: #84AE92;
+    border-top: 1px solid black;
+    border-left: 1px solid black; 
+    border-right: 2px solid black;
+    word-wrap: break-word;
+
+}
+#info{
+    width: 333px;
+    height: 25px;
+    word-spacing: 100px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 1px;
+    background-color: #84AE92;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black; 
+    border-right: 2px solid black;
+    color: #57df85;
+    font-style: italic;
+
 }
 
 #date{
     border: 2px solid black;
 }
 .container{
-    width: 100%;
-    min-height: 100vh;
-    background: #689977;
+    width: 2100px;
+    min-height: 80vh;
+    background: #84AE92;
     display: flex;
     align-items: center;
     border: 3px solid black;
+    margin-left: 35px;
+    
+    
 }
 #left, #right, #mid{
     position: fixed;
     width: 400px;
     height: 600px;
     margin: 10px;
+
+    border: 3px solid rgb(0, 0, 0);
+    box-shadow: 16px 15px 10px -1px rgba(0,0,0,0.55);
+    overflow: auto;
+}
+#left{
+    position: fixed;
+    left: 370px;
     border: 2px solid white;
     overflow: auto;
+
 }
 
 #mid{
     position: fixed;
-    top: 192px;
-    right: 100px;
-    right: 680px;
+    top: 175px;
+    right: 630px;   
 }
 #right{
     position: fixed;
-    bottom: 151px;
-    right: 170px;
+    bottom: 131px;
+    right: 140px;
 }
 
 .list{
     height: 50px;
     margin: 30px;
-    color: #fff;
+    color: #000000;
     cursor: grab;
 }
              
@@ -135,6 +229,9 @@ dasdasafdasadasdafadsasfasfasdafa
             
         })
     }
+
+
+    
 </script>
 </div>
 

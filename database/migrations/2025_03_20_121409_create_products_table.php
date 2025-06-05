@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('supplier_id');
             $table->foreign('supplier_id')->references('id')->on('suppliers');
             $table->string('name');
-            $table->double('price')->default(0.00);
+            $table->date('price')->default(0.00);
             $table->string('category');
             $table->timestamps();
         });

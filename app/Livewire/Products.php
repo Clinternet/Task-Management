@@ -55,7 +55,7 @@ class Products extends Component
         $this->validate([
             'supplierID' => 'required',
             'name' => 'required',
-            'price' => 'required|numeric',
+            'price' => 'required|date',
             'category' => 'required',
         ]);
 
