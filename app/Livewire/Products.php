@@ -11,7 +11,7 @@ use Livewire\Attributes\Title;
 use Livewire\WithFileUploads;
 
 #[Layout('layouts.app')]
-#[Title(content: 'Products')]
+#[Title(content: 'Tasks')]
 class Products extends Component
 {
     use WithFileUploads;
