@@ -2,6 +2,7 @@
     <style>
     body {
         margin: 0;
+        background-image: url("images/background.jpg");
     }
     
     .landing-banner {
@@ -35,7 +36,7 @@
     .login-form {
         width: 400px !important;
         height: 500px !important;
-        background: white;
+        background: rgb(160, 154, 154);
         border-radius: 20px;
         display: flex;
         flex-direction: column;
@@ -43,6 +44,9 @@
         align-items: center;
         padding: 20px;
         gap: 15px;
+        margin-left: 750px;
+        margin-top: 150px;
+        border: 2px solid black;
     }
     
     .login-form input {
@@ -63,36 +67,28 @@
     
     
     <div class="landing-banner">
-        <div class="banner-left">
-            <h1>
-                Welcome to <br>
-                My Online Shopping
-            </h1>
-        </div>
     
-        <div class="banner-right">
+        <div class="">
             <div class="login-form">
-                <p>Register</p>
+                <h2>Register</h2>
                 <form wire:submit.prevent="register" style="width: 100%">
                     <div style="width: 100%; height: 80px">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" wire:model.live="email">
+                        
+                        <input type="email" id="email" wire:model.live="email" placeholder="Email">
                         @error('email')
                             <p style="font-size: 14px; color: red;">{{ $message }}</p>
                         @enderror
                     </div>
     
                     <div style="width: 100%; height: 80px">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" wire:model.live="password">
+                        <input type="password" id="password" wire:model.live="password" placeholder="Password">
                         @error('password')
                             <p style="font-size: 14px; color: red;">{{ $message }}</p>
                         @enderror
                     </div>
     
                     <div style="width: 100%; height: 80px">
-                        <label for="cpassword">Confirm Password</label>
-                        <input type="password" id="cpassword" wire:model.live="cpassword">
+                        <input type="password" id="cpassword" wire:model.live="cpassword" placeholder="Confirm Password">
                         @error('cpassword')
                             <p style="font-size: 14px; color: red;">{{ $message }}</p>
                         @enderror

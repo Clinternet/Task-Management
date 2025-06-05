@@ -17,7 +17,7 @@
                 justify-content: center;
                 align-items: center;
                 margin-top: 170px;
-                margin-left: 140px;
+                margin-left: 160px;
                 border: black 3px solid;
                 
             }

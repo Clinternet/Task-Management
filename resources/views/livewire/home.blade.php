@@ -37,14 +37,7 @@
                     </p>
 
 
-                <div class="list" draggable="true" id="borderlist">
-                    <p class="text-2xl font-bold">{{ $product->name }}</p>
-
-                    <div id="date">
-                        <p class="text-2xl font-bold">{{ $product->price }}</p>
-                    </div>
-
-                </div>
+                
 
                 
                 
