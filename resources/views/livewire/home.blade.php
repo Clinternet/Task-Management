@@ -20,6 +20,7 @@
                         
             <div>
                 
+
                 <div class="list" draggable="true" id="borderlist" clas>
                     <p class="text-2xl font-bold" id="borderlist">{{ $product->name }} 
                         <div id="info">
@@ -35,13 +36,28 @@
                         
                     </p>
 
+
+                <div class="list" draggable="true" id="borderlist">
+                    <p class="text-2xl font-bold">{{ $product->name }}</p>
+
+                    <div id="date">
+                        <p class="text-2xl font-bold">{{ $product->price }}</p>
+                    </div>
+
                 </div>
 
                 
                 
+
             </div>
             
               
+
+                
+            </div>   
+
+
+            
 
             @endforeach
         
@@ -106,8 +122,8 @@
     border-top: 1px solid black;
     border-left: 1px solid black; 
     border-right: 2px solid black;
-    
-    
+    word-wrap: break-word;
+
 }
 #info{
     width: 333px;
@@ -126,6 +142,9 @@
 
 }
 
+#date{
+    border: 2px solid black;
+}
 .container{
     width: 2100px;
     min-height: 80vh;
@@ -142,6 +161,7 @@
     width: 400px;
     height: 600px;
     margin: 10px;
+
     border: 3px solid rgb(0, 0, 0);
     box-shadow: 16px 15px 10px -1px rgba(0,0,0,0.55);
     overflow: auto;
@@ -149,7 +169,9 @@
 #left{
     position: fixed;
     left: 370px;
-    
+    border: 2px solid white;
+    overflow: auto;
+
 }
 
 #mid{

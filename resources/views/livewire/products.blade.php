@@ -3,14 +3,22 @@
         <h2>Tasks</h2>
         <div class="product-form p-4 drop-shadow-2xl">
             <p class="text-black-500 font-bold" style="margin-left: 10px;">{{ $action }} Add Tasks</p>
+        <h2 id="tas">Tasks</h2>
+        <div class="product-form p-4 drop-shadow-2xl">
+            <p class="text-black-500 font-bold" style="margin-left: 10px;">{{ $action }}</p>
             <hr class="hr">
             <form wire:submit.prevent='saveProduct' class="form">
                 <div class="form-group">
                     <div class="form-row">
                         <div class="form-field">
                             <label for="">User</label>
+
                             <select wire:model='supplierID' class="inputs">
                                 <option value="" selected >Select User</option>
+
+                            <select wire:model='supplierID'>
+                                <option value="" selected>Select User</option>
+
                                 @foreach ($suppliers as $supplier)
                                     <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
                                 @endforeach
@@ -31,9 +39,14 @@
                             @enderror
                         </div>
 
+
                         <div class="form-field">
                             <label for="price">Date</label>
                             <input type="date" step="any" wire:model='price' class="inputs" placeholder="MM-DD-YY">
+
+                        <div class="">
+                            <label for="price" id="date">Date</label>
+                            <input type="number" wire:model='price'>
                             @error('price')
                                 <p style="font-size: 14px; color: red;">{{ $message }}</p>
                             @enderror
@@ -41,14 +54,21 @@
                     </div>
                     
 
-                    <div class="form-row">
-                        <div class="form-field">
+                    <div class="">
+                        <div class="">
                             <label for="">Priority Levels</label>
+
                             <select wire:model='category' class="inputs">
                                 <option value="">Priority Levels</option>
                                 <option value="Low" style="font-size: 18px; color: rgb(55, 206, 55);">Low</option>
                                 <option value="Medium" style="font-size: 18px; color: rgb(231, 140, 54);">Medium</option>
                                 <option value="High" style="font-size: 18px; color: rgb(255, 0, 0);">High</option>
+
+                            <select wire:model='category'>
+                                <option value="" id="pl">Priority Levels</option>
+                                <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
             
                             </select>
                             @error('category')
