@@ -1,16 +1,16 @@
 <div class="main-container">
     <div class="products">
-        <h3>Tasks</h3>
+        <h2>Tasks</h2>
         <div class="product-form p-4 drop-shadow-2xl">
-            <p class="text-black-500 font-bold" style="margin-left: 10px;">{{ $action }} Add Products</p>
+            <p class="text-black-500 font-bold" style="margin-left: 10px;">{{ $action }} Add Tasks</p>
             <hr class="hr">
             <form wire:submit.prevent='saveProduct' class="form">
                 <div class="form-group">
                     <div class="form-row">
                         <div class="form-field">
-                            <label for="">User*</label>
-                            <select wire:model='supplierID'>
-                                <option value="" selected>Select User</option>
+                            <label for="">User</label>
+                            <select wire:model='supplierID' class="inputs">
+                                <option value="" selected >Select User</option>
                                 @foreach ($suppliers as $supplier)
                                     <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
                                 @endforeach
@@ -25,7 +25,7 @@
                     <div class="form-row">
                         <div class="form-field">
                             <label for="">Task</label>
-                            <input type="text" wire:model='name' id="task">
+                            <input type="text" wire:model='name' id="task" class="inputs" placeholder="Input Tasks">
                             @error('name')
                                 <p style="font-size: 14px; color: red;">{{ $message }}</p>
                             @enderror
@@ -33,7 +33,7 @@
 
                         <div class="form-field">
                             <label for="price">Date</label>
-                            <input type="number" step="any" wire:model='price'>
+                            <input type="date" step="any" wire:model='price' class="inputs" placeholder="MM-DD-YY">
                             @error('price')
                                 <p style="font-size: 14px; color: red;">{{ $message }}</p>
                             @enderror
@@ -44,11 +44,11 @@
                     <div class="form-row">
                         <div class="form-field">
                             <label for="">Priority Levels</label>
-                            <select wire:model='category'>
+                            <select wire:model='category' class="inputs">
                                 <option value="">Priority Levels</option>
-                                <option value="Low">Low</option>
-                                <option value="Medium">Medium</option>
-                                <option value="High">High</option>
+                                <option value="Low" style="font-size: 18px; color: rgb(55, 206, 55);">Low</option>
+                                <option value="Medium" style="font-size: 18px; color: rgb(231, 140, 54);">Medium</option>
+                                <option value="High" style="font-size: 18px; color: rgb(255, 0, 0);">High</option>
             
                             </select>
                             @error('category')
@@ -81,7 +81,6 @@
                     <tr>
                         <th class="left">Task No.</th>
                         <th>User</th>
-                        <th>Task</th>
                         <th>Date</th>
                         <th>Priorty Levels</th>
                         <th class="right">Action</th>
@@ -94,9 +93,11 @@
                     <tr>
                         <td>{{ $item++ }}</td> <!-- Display Item No. -->
                         <td>{{ $product->supplier_name }}</td>
-                        <td>{{ $product->name }}</td>
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->category }}</td>
+
+
+
                         <td class="button-group">
                             <button class="edit-btn" wire:click='toggleEditProduct({{ $product->id }})'>
                                 <i class=""></i> Edit
@@ -113,7 +114,7 @@
 
     <style>
         *{
-            background-color: rgb(228, 169, 159);
+            background-color: rgb(214, 204, 204);
         }
     </style>
 </div>

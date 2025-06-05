@@ -26,8 +26,8 @@
         <div class="sidebar">
             <!-- Logo & Name -->
             <div style="display: flex; align-items: center; gap: 15px; padding: 10px;">
-                <img src="/images/logo2.jpg" alt="Logo" width="50">
-                <h4>Task</h4>
+                
+                <h5>Task Management App</h5>
             </div>
             <div class="divider"></div>
 
@@ -61,5 +61,7 @@
     </div>
 
     @livewireScripts
+
+    
 </body>
 </html>
